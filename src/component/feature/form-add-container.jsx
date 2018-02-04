@@ -4,7 +4,7 @@ import { createFeatureToggles, validateName } from '../../store/feature-actions'
 import { createMapper, createActions } from '../input-helpers';
 import FormAddComponent from './form-add-component';
 
-const defaultStrategy = {name: 'default'};
+const defaultStrategy = { name: 'default' };
 
 const ID = 'add-feature-toggle';
 const mapStateToProps = createMapper({
@@ -30,7 +30,7 @@ const prepare = (methods, dispatch) => {
                 delete s.id;
             });
         } else {
-            input.strategies = [ defaultStrategy ];
+            input.strategies = [defaultStrategy];
         }
 
         createFeatureToggles(input)(dispatch)

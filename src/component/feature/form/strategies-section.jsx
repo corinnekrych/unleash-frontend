@@ -24,7 +24,7 @@ class StrategiesSection extends React.Component {
         }
 
         return (
-            <div style={{padding: '10px 0'}}>
+            <div style={{ padding: '10px 0' }}>
                 <HeaderTitle title="Activation strategies" actions={<AddStrategy {...this.props} />} />
                 <StrategiesList {...this.props} />
             </div>
