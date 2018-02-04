@@ -79,7 +79,8 @@ class AddFeatureToggleComponent extends Component {
                             >
                                 Enabled
                             </Switch>
-                            <hr />
+                            <br />
+                            <br />
                         </div>
                     )}
 
