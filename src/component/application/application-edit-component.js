@@ -20,8 +20,9 @@ import {
     Tab,
     Switch,
 } from 'react-mdl';
-import { IconLink, shorten, styles as commonStyles } from '../common';
+import { IconLink, shorten } from '../common';
 import { formatFullDateTimeWithLocale } from '../common/util';
+import '../common/common.css';
 
 class StatefulTextfield extends Component {
     static propTypes = {
@@ -192,7 +193,7 @@ class ClientApplications extends PureComponent {
             );
 
         return (
-            <Card shadow={0} className={commonStyles.fullwidth}>
+            <Card shadow={0} className={'fullwidth'}>
                 <CardTitle style={{ paddingTop: '24px', paddingRight: '64px', wordBreak: 'break-all' }}>
                     <Icon name={icon} /> {appName}
                 </CardTitle>

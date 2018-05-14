@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Card } from 'react-mdl';
 import HistoryList from './history-list-container';
-import { styles as commonStyles } from '../common';
+import '../common/common.css';
 
 class History extends PureComponent {
     static propTypes = {
@@ -25,7 +25,7 @@ class History extends PureComponent {
         }
 
         return (
-            <Card shadow={0} className={commonStyles.fullwidth}>
+            <Card shadow={0} className={'fullwidth'}>
                 <HistoryList history={history} title="Recent changes" />
             </Card>
         );

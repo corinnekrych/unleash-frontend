@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import style from './history.css';
+import  './history.css';
 
 const DIFF_PREFIXES = {
     A: ' ',
@@ -11,10 +11,10 @@ const DIFF_PREFIXES = {
 };
 
 const KLASSES = {
-    A: style.blue, // array edited
-    E: style.blue, // edited
-    D: style.negative, // deleted
-    N: style.positive, // added
+    A: 'blue', // array edited
+    E: 'blue', // edited
+    D: 'negative', // deleted
+    N: 'positive', // added
 };
 
 function buildItemDiff(diff, key) {

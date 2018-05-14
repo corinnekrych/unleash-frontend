@@ -5,10 +5,10 @@ import Progress from './progress';
 import { Link } from 'react-router';
 import { AppsLinkList, calc } from '../common';
 import { formatFullDateTimeWithLocale } from '../common/util';
-import styles from './metrics.css';
+import './metrics.css';
 
 const StrategyChipItem = ({ strategy }) => (
-    <Chip className={styles.chip}>
+    <Chip className={'chip'}>
         <ChipContact className="mdl-color--blue-grey mdl-color-text--white">
             <Icon style={{ marginTop: '3px' }} name="link" />
         </ChipContact>
@@ -97,7 +97,7 @@ export default class MetricComponent extends React.Component {
                         ) : (
                             <div>
                                 <Icon
-                                    className={styles.problemIcon}
+                                    className={'problemIcon'}
                                     name="report problem"
                                     title="Not used in an app in the last hour"
                                 />

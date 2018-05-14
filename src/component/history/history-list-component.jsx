@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import HistoryItemDiff from './history-item-diff';
 import HistoryItemJson from './history-item-json';
 import { Table, TableHeader } from 'react-mdl';
-import { DataTableHeader, SwitchWithLabel, styles as commonStyles } from '../common';
+import { DataTableHeader, SwitchWithLabel } from '../common';
 import { formatFullDateTimeWithLocale } from '../common/util';
 
-import styles from './history.css';
+import './history.css';
+import '../common/common.css';
 
 class HistoryList extends Component {
     static propTypes = {
@@ -32,7 +33,7 @@ class HistoryList extends Component {
 
         const truncateTableCell = v => (
             <span
-                className={commonStyles.truncate}
+                className={'truncate'}
                 style={{ display: 'inline-block', verticalAlign: 'middle', width: '100%' }}
             >
                 {v}
@@ -55,7 +56,7 @@ class HistoryList extends Component {
                             entry
                         )
                     )}
-                    className={commonStyles.fullwidth}
+                    className={'fullwidth'}
                     style={{ border: 0, tableLayout: 'fixed', minWidth: '840px' }}
                 >
                     <TableHeader name="type" cellFormatter={truncateTableCell} style={{ width: '136px' }}>
@@ -78,7 +79,7 @@ class HistoryList extends Component {
         }
 
         return (
-            <div className={styles.history}>
+            <div className={'history'}>
                 <DataTableHeader
                     title={this.props.title}
                     actions={
@@ -87,7 +88,7 @@ class HistoryList extends Component {
                         </SwitchWithLabel>
                     }
                 />
-                <div className={commonStyles.horisontalScroll}>{entries}</div>
+                <div className={'horisontalScroll'}>{entries}</div>
             </div>
         );
     }

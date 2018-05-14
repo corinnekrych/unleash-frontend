@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './user.css';
+import './user.css';
 
 export default class ShowUserComponent extends React.Component {
     static propTypes = {
@@ -43,11 +43,11 @@ export default class ShowUserComponent extends React.Component {
         const imageUrl = email ? this.props.profile.imageUrl : 'public/unknown-user.png';
         const imageLocale = foundLocale ? `public/${foundLocale.image}.png` : `public/unknown-locale.png`;
         return (
-            <div className={styles.showUserSettings}>
-                <div className={styles.showLocale}>
+            <div className={'showUserSettings'}>
+                <div className={'showLocale'}>
                     <img src={imageLocale} title={locale} alt={locale} onClick={this.updateLocale.bind(this)} />
                 </div>&nbsp;
-                <div className={styles.showUser}>
+                <div className={'showUser'}>
                     <img src={imageUrl} title={email} alt={email} />
                 </div>
             </div>

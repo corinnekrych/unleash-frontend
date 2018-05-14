@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import style from './history.css';
+import './history.css';
 
 class HistoryItem extends PureComponent {
     static propTypes = {
@@ -17,7 +17,7 @@ class HistoryItem extends PureComponent {
         const prettyPrinted = JSON.stringify(localEventData, null, 2);
 
         return (
-            <div className={style['history-item']}>
+            <div className={'history-item'}>
                 <div>
                     <code className="JSON smalltext man">{prettyPrinted}</code>
                 </div>

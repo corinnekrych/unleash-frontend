@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './progress-styles.css';
+import './progress-styles.css';
 
 class Progress extends Component {
     constructor(props) {
@@ -109,21 +109,21 @@ class Progress extends Component {
         ) : (
             <svg viewBox="0 0 100 100">
                 <path
-                    className={[styles.trail, 'mdl-color-text--grey-300'].join(' ')}
+                    className={['trail', 'mdl-color-text--grey-300'].join(' ')}
                     d={pathDescription}
                     strokeWidth={strokeWidth}
                     fillOpacity={0}
                 />
 
                 <path
-                    className={[styles.path, colorClassName].join(' ')}
+                    className={['path', colorClassName].join(' ')}
                     d={pathDescription}
                     strokeWidth={strokeWidth}
                     fillOpacity={0}
                     style={progressStyle}
                 />
 
-                <text className={styles.text} x={50} y={50}>
+                <text className={'text'} x={50} y={50}>
                     {this.state.percentageText}%
                 </text>
             </svg>

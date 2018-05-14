@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ProgressBar, Card } from 'react-mdl';
-import { AppsLinkList, styles as commonStyles } from '../common';
+import { AppsLinkList } from '../common';
+import '../common/common.css';
 
 class ClientStrategies extends Component {
     static propTypes = {
@@ -20,7 +21,7 @@ class ClientStrategies extends Component {
             return <ProgressBar indeterminate />;
         }
         return (
-            <Card className={commonStyles.fullwidth}>
+            <Card className={'fullwidth'}>
                 <AppsLinkList apps={applications} />
             </Card>
         );
