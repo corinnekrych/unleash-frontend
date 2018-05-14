@@ -4,7 +4,7 @@ import { Textfield, Switch, Card, CardTitle, CardActions } from 'react-mdl';
 import StrategiesSection from './strategies-section-container';
 
 import { FormButtons } from './../../common';
-import { styles as commonStyles } from '../../common';
+import '../../common';
 
 const trim = value => {
     if (value && value.trim) {
@@ -45,7 +45,7 @@ class AddFeatureComponent extends Component {
         const configuredStrategies = input.strategies || [];
 
         return (
-            <Card shadow={0} className={commonStyles.fullwidth} style={{ overflow: 'visible' }}>
+            <Card shadow={0} className={'fullwidth'} style={{ overflow: 'visible' }}>
                 <CardTitle style={{ paddingTop: '24px', wordBreak: 'break-all' }}>Create feature toggle</CardTitle>
                 <form onSubmit={onSubmit(input)}>
                     <section style={{ padding: '16px' }}>
