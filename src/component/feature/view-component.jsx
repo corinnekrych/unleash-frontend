@@ -7,7 +7,7 @@ import HistoryComponent from '../history/history-list-toggle-container';
 import MetricComponent from './metric-container';
 import EditFeatureToggle from './form/form-update-feature-container';
 import ViewFeatureToggle from './form/form-view-feature-container';
-import { styles as commonStyles } from '../common';
+import '../common/common.css';
 
 const TABS = {
     strategies: 0,
@@ -128,7 +128,7 @@ export default class ViewFeatureToggleComponent extends React.Component {
         };
 
         return (
-            <Card shadow={0} className={commonStyles.fullwidth} style={{ overflow: 'visible' }}>
+            <Card shadow={0} className={'fullwidth'} style={{ overflow: 'visible' }}>
                 <CardTitle style={{ paddingTop: '24px', wordBreak: 'break-all' }}>{featureToggle.name}</CardTitle>
                 <CardText>
                     {this.isFeatureView ? (

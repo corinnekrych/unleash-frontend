@@ -15,7 +15,7 @@ import {
     Icon,
 } from 'react-mdl';
 import { Link } from 'react-router';
-import styles from './styles.css';
+import './styles.css';
 import ErrorContainer from './error/error-container';
 
 import AuthenticationContainer from './user/authentication-container';
@@ -93,7 +93,7 @@ export default class App extends Component {
                     <span key={entry.link + index} className={index > 0 ? 'mdl-layout--large-screen-only' : ''}>
                         {index > 0 ? ' › ' : null}
                         <Link
-                            className={[styles.headerTitleLink, 'mdl-color-text--primary-contrast'].join(' ')}
+                            className={['headerTitleLink', 'mdl-color-text--primary-contrast'].join(' ')}
                             to={entry.link}
                         >
                             {entry.name}
@@ -124,13 +124,13 @@ export default class App extends Component {
             const renderIcon = (
                 <Icon
                     name={icon}
-                    className={isDrawerNavigation ? [styles.navigationIcon, iconColor].join(' ') : undefined}
+                    className={isDrawerNavigation ? ['navigationIcon', iconColor].join(' ') : undefined}
                 />
             );
             return (
                 <Link
                     to={path}
-                    className={isDrawerNavigation ? [styles.navigationLink, linkColor].join(' ') : undefined}
+                    className={isDrawerNavigation ? ['navigationLink', linkColor].join(' ') : undefined}
                 >
                     {icon && renderIcon}
                     {caption}
@@ -139,7 +139,7 @@ export default class App extends Component {
         };
 
         return (
-            <div className={styles.container}>
+            <div className={'container'}>
                 <AuthenticationContainer />
                 <Layout fixedHeader>
                     <Header title={this.getTitleWithLinks()}>
@@ -148,12 +148,12 @@ export default class App extends Component {
                         </Navigation>
                     </Header>
                     <Drawer className="mdl-color--white">
-                        <span className={[styles.drawerTitle, 'mdl-layout-title'].join(' ')}>
-                            <img src="public/logo.png" width="32" height="32" className={styles.drawerTitleLogo} />
-                            <span className={styles.drawerTitleText}>Unleash</span>
+                        <span className={['drawerTitle', 'mdl-layout-title'].join(' ')}>
+                            <img src="public/logo.png" width="32" height="32" className={'drawerTitleLogo'} />
+                            <span className={'drawerTitleText'}>Unleash</span>
                         </span>
                         <hr />
-                        <Navigation className={styles.navigation}>
+                        <Navigation className={'navigation'}>
                             {createListItem('/features', 'Feature Toggles', 'list', true)}
                             {createListItem('/strategies', 'Strategies', 'extension', true)}
                             {createListItem('/history', 'Event History', 'history', true)}
@@ -162,19 +162,19 @@ export default class App extends Component {
                             {createListItem('logout', 'Sign out', 'exit_to_app', true)}
                         </Navigation>
                         <hr />
-                        <Navigation className={styles.navigation}>
+                        <Navigation className={'navigation'}>
                             <a
                                 href="https://github.com/Unleash"
                                 target="_blank"
-                                className={[styles.navigationLink, 'mdl-color-text--grey-900'].join(' ')}
+                                className={['navigationLink', 'mdl-color-text--grey-900'].join(' ')}
                             >
-                                <i className={['material-icons', styles.navigationIcon, styles.iconGitHub].join(' ')} />GitHub
+                                <i className={['material-icons', 'navigationIcon', 'iconGitHub'].join(' ')} />GitHub
                             </a>
                         </Navigation>
                     </Drawer>
                     <ScrollContainer scrollKey="container" shouldUpdateScroll={shouldUpdateScroll}>
                         <Content className="mdl-color--grey-50">
-                            <Grid noSpacing className={styles.content}>
+                            <Grid noSpacing className={'content'}>
                                 <Cell col={12}>
                                     {this.props.children}
                                     <ErrorContainer />

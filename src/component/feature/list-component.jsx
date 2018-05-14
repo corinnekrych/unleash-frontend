@@ -4,7 +4,7 @@ import Feature from './feature-list-item-component';
 import { hashHistory, Link } from 'react-router';
 import { Icon, FABButton, Textfield, Menu, MenuItem, Card, CardActions, List } from 'react-mdl';
 import { MenuItemWithIcon, DropdownButton, styles as commonStyles } from '../common';
-import styles from './feature.css';
+import './feature.css';
 
 export default class FeatureListComponent extends React.Component {
     static propTypes = {
@@ -55,7 +55,7 @@ export default class FeatureListComponent extends React.Component {
         });
         return (
             <div>
-                <div className={styles.toolbar}>
+                <div className={'toolbar'}>
                     <Textfield
                         floatingLabel
                         value={settings.filter}
@@ -65,7 +65,7 @@ export default class FeatureListComponent extends React.Component {
                         label="Search"
                         style={{ width: '100%' }}
                     />
-                    <Link to="/features/create" className={styles.toolbarButton}>
+                    <Link to="/features/create" className={'toolbarButton'}>
                         <FABButton accent title="Create feature toggle">
                             <Icon name="add" />
                         </FABButton>

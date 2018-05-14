@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { Switch, Chip, ListItem, ListItemAction, Icon } from 'react-mdl';
 import Progress from './progress';
-import { calc, styles as commonStyles } from '../common';
-
-import styles from './feature.css';
+import { calc } from '../common';
+import '../common/common.css';
+import './feature.css';
 import { ListView, Row } from 'patternfly-react';
 
 const PATTERNFLY = false;
@@ -65,11 +65,11 @@ const Feature = ({
     const strategyChips =
         strategies &&
         strategies.slice(0, strategiesToShow).map((s, i) => (
-            <Chip className={styles.strategyChip} key={i}>
+            <Chip className={'strategyChip'} key={i}>
                 {s.name}
             </Chip>
         ));
-    const summaryChip = remainingStrategies > 0 && <Chip className={styles.strategyChip}>+{remainingStrategies}</Chip>;
+    const summaryChip = remainingStrategies > 0 && <Chip className={'strategyChip'}>+{remainingStrategies}</Chip>;
     const featureUrl = toggleFeature === undefined ? `/archive/strategies/${name}` : `/features/strategies/${name}`;
     const functionToToggle = () => {};
     if (PATTERNFLY) {
@@ -77,10 +77,10 @@ const Feature = ({
     } else {
         return (
             <ListItem twoLine>
-                <span className={styles.listItemMetric}>
+                <span className={'listItemMetric'}>
                     <Progress strokeWidth={15} percentage={percent} isFallback={isStale} />
                 </span>
-                <span className={styles.listItemToggle}>
+                <span className={'listItemToggle'}>
                     <Switch
                         disabled={toggleFeature === undefined}
                         title={`Toggle ${name}`}
@@ -89,15 +89,15 @@ const Feature = ({
                         checked={enabled}
                     />
                 </span>
-                <span className={['mdl-list__item-primary-content', styles.listItemLink].join(' ')}>
-                    <Link to={featureUrl} className={[commonStyles.listLink, commonStyles.truncate].join(' ')}>
+                <span className={['mdl-list__item-primary-content', 'listItemLink'].join(' ')}>
+                    <Link to={featureUrl} className={['listLink', 'truncate'].join(' ')}>
                         {name}
-                        <span className={['mdl-list__item-sub-title', commonStyles.truncate].join(' ')}>
+                        <span className={['mdl-list__item-sub-title', 'truncate'].join(' ')}>
                             {description}
                         </span>
                     </Link>
                 </span>
-                <span className={[styles.listItemStrategies, commonStyles.hideLt920].join(' ')}>
+                <span className={['listItemStrategies', 'hideLt920'].join(' ')}>
                     {strategyChips}
                     {summaryChip}
                 </span>
