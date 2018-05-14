@@ -5,7 +5,7 @@ import { DragSource, DropTarget } from 'react-dnd';
 import { Link } from 'react-router';
 import StrategyInputPercentage from './strategy-input-percentage';
 import StrategyInputList from './strategy-input-list';
-import styles from './strategy.scss';
+import styles from './strategy.css';
 
 const dragSource = {
     beginDrag(props) {

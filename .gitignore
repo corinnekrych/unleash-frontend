@@ -46,3 +46,9 @@ dist
 .idea/
 
 .DS_Store
+
+# generated files
+src/**/*.css
+src/fonts/
+src/img/
+*.map

@@ -5,7 +5,7 @@ import Progress from './progress';
 import { Link } from 'react-router';
 import { AppsLinkList, calc } from '../common';
 import { formatFullDateTimeWithLocale } from '../common/util';
-import styles from './metrics.scss';
+import styles from './metrics.css';
 
 const StrategyChipItem = ({ strategy }) => (
     <Chip className={styles.chip}>

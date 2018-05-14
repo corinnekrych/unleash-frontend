@@ -15,7 +15,7 @@ import {
     Icon,
 } from 'react-mdl';
 import { Link } from 'react-router';
-import styles from './styles.scss';
+import styles from './styles.css';
 import ErrorContainer from './error/error-container';
 
 import AuthenticationContainer from './user/authentication-container';

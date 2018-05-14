@@ -5,8 +5,44 @@ import { Switch, Chip, ListItem, ListItemAction, Icon } from 'react-mdl';
 import Progress from './progress';
 import { calc, styles as commonStyles } from '../common';
 
-import styles from './feature.scss';
+import styles from './feature.css';
+import { ListView, Row } from 'patternfly-react';
 
+const PATTERNFLY = false;
+
+const renderPatternfly = (feature, functionToToggle) => (
+    <ListView>
+        <ListView.GroupItem stacked expanded>
+            <ListView.GroupItemHeader toggleExpanded={functionToToggle}>
+                {' '}
+                // required only if the ListViewGroupItem is supposed to be expandable
+                <ListView.Expand expanded />
+                <ListView.Checkbox />
+                <ListView.MainInfo>
+                    <ListView.Left>
+                        <ListView.Icon size="sm" name="flask" />
+                    </ListView.Left>
+                    <ListView.Body>
+                        <ListView.Description>
+                            <ListView.DescriptionHeading>{feature.name}</ListView.DescriptionHeading>
+                            <ListView.DescriptionText>{feature.description}</ListView.DescriptionText>
+                        </ListView.Description>
+                        <ListView.AdditionalInfo>
+                            <ListView.InfoItem>
+                                <ListView.Icon type="pf" name="flavor" />
+                                {feature.name}
+                            </ListView.InfoItem>
+                        </ListView.AdditionalInfo>
+                    </ListView.Body>
+                </ListView.MainInfo>
+            </ListView.GroupItemHeader>
+
+            <ListView.GroupItemContainer onClose={functionToToggle} expanded>
+                <Row>Some content goes here</Row>
+            </ListView.GroupItemContainer>
+        </ListView.GroupItem>
+    </ListView>
+);
 const Feature = ({
     feature,
     toggleFeature,
@@ -35,39 +71,46 @@ const Feature = ({
         ));
     const summaryChip = remainingStrategies > 0 && <Chip className={styles.strategyChip}>+{remainingStrategies}</Chip>;
     const featureUrl = toggleFeature === undefined ? `/archive/strategies/${name}` : `/features/strategies/${name}`;
-    return (
-        <ListItem twoLine>
-            <span className={styles.listItemMetric}>
-                <Progress strokeWidth={15} percentage={percent} isFallback={isStale} />
-            </span>
-            <span className={styles.listItemToggle}>
-                <Switch
-                    disabled={toggleFeature === undefined}
-                    title={`Toggle ${name}`}
-                    key="left-actions"
-                    onChange={() => toggleFeature(name)}
-                    checked={enabled}
-                />
-            </span>
-            <span className={['mdl-list__item-primary-content', styles.listItemLink].join(' ')}>
-                <Link to={featureUrl} className={[commonStyles.listLink, commonStyles.truncate].join(' ')}>
-                    {name}
-                    <span className={['mdl-list__item-sub-title', commonStyles.truncate].join(' ')}>{description}</span>
-                </Link>
-            </span>
-            <span className={[styles.listItemStrategies, commonStyles.hideLt920].join(' ')}>
-                {strategyChips}
-                {summaryChip}
-            </span>
-            {revive ? (
-                <ListItemAction onClick={() => revive(feature.name)}>
-                    <Icon name="undo" />
-                </ListItemAction>
-            ) : (
-                <span />
-            )}
-        </ListItem>
-    );
+    const functionToToggle = () => {};
+    if (PATTERNFLY) {
+        return renderPatternfly(feature, functionToToggle);
+    } else {
+        return (
+            <ListItem twoLine>
+                <span className={styles.listItemMetric}>
+                    <Progress strokeWidth={15} percentage={percent} isFallback={isStale} />
+                </span>
+                <span className={styles.listItemToggle}>
+                    <Switch
+                        disabled={toggleFeature === undefined}
+                        title={`Toggle ${name}`}
+                        key="left-actions"
+                        onChange={() => toggleFeature(name)}
+                        checked={enabled}
+                    />
+                </span>
+                <span className={['mdl-list__item-primary-content', styles.listItemLink].join(' ')}>
+                    <Link to={featureUrl} className={[commonStyles.listLink, commonStyles.truncate].join(' ')}>
+                        {name}
+                        <span className={['mdl-list__item-sub-title', commonStyles.truncate].join(' ')}>
+                            {description}
+                        </span>
+                    </Link>
+                </span>
+                <span className={[styles.listItemStrategies, commonStyles.hideLt920].join(' ')}>
+                    {strategyChips}
+                    {summaryChip}
+                </span>
+                {revive ? (
+                    <ListItemAction onClick={() => revive(feature.name)}>
+                        <Icon name="undo" />
+                    </ListItemAction>
+                ) : (
+                    <span />
+                )}
+            </ListItem>
+        );
+    }
 };
 
 Feature.propTypes = {

@@ -1,3 +1,7 @@
+@import 'patternfly';
+@import 'patternfly-react';
+
+
 .container {
     ul {
         margin: 0;
@@ -10,7 +14,7 @@
 }
 
 .content {
-    width: 1200px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 16px;

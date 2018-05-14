@@ -4,7 +4,7 @@ import Feature from './feature-list-item-component';
 import { hashHistory, Link } from 'react-router';
 import { Icon, FABButton, Textfield, Menu, MenuItem, Card, CardActions, List } from 'react-mdl';
 import { MenuItemWithIcon, DropdownButton, styles as commonStyles } from '../common';
-import styles from './feature.scss';
+import styles from './feature.css';
 
 export default class FeatureListComponent extends React.Component {
     static propTypes = {

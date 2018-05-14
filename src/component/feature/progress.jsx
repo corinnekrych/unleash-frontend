@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './progress-styles.scss';
+import styles from './progress-styles.css';
 
 class Progress extends Component {
     constructor(props) {

@@ -6,7 +6,7 @@ import { Table, TableHeader } from 'react-mdl';
 import { DataTableHeader, SwitchWithLabel, styles as commonStyles } from '../common';
 import { formatFullDateTimeWithLocale } from '../common/util';
 
-import styles from './history.scss';
+import styles from './history.css';
 
 class HistoryList extends Component {
     static propTypes = {
