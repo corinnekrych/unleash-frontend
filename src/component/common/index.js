@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { List, ListItem, ListItemContent, Button, Icon, Switch, MenuItem } from 'react-mdl';
-import styles from './common.css';
-
-export { styles };
+import './common.css';
 
 export const shorten = (str, len = 50) => (str && str.length > len ? `${str.substring(0, len)}...` : str);
 
@@ -15,9 +13,9 @@ export const AppsLinkList = ({ apps }) => (
                 <ListItem twoLine key={appName}>
                     <span className="mdl-list__item-primary-content" style={{ minWidth: 0 }}>
                         <Icon name={icon} className="mdl-list__item-avatar" />
-                        <Link to={`/applications/${appName}`} className={[styles.listLink, styles.truncate].join(' ')}>
+                        <Link to={`/applications/${appName}`} className={['listLink', 'truncate'].join(' ')}>
                             {appName}
-                            <span className={['mdl-list__item-sub-title', styles.truncate].join(' ')}>
+                            <span className={['mdl-list__item-sub-title', 'truncate'].join(' ')}>
                                 {description}
                             </span>
                         </Link>
@@ -54,11 +52,11 @@ HeaderTitle.propTypes = {
 };
 
 export const DataTableHeader = ({ title, actions }) => (
-    <div className={styles.dataTableHeader}>
-        <div className={styles.title}>
-            <h2 className={styles.titleText}>{title}</h2>
+    <div className={'dataTableHeader'}>
+        <div className={'title'}>
+            <h2 className={'titleText'}>{title}</h2>
         </div>
-        {actions && <div className={styles.actions}>{actions}</div>}
+        {actions && <div className={'actions'}>{actions}</div>}
     </div>
 );
 DataTableHeader.propTypes = {
@@ -84,9 +82,9 @@ FormButtons.propTypes = {
 };
 
 export const SwitchWithLabel = ({ onChange, checked, children, ...switchProps }) => (
-    <span className={styles.switchWithLabel}>
-        <span className={styles.label}>{children}</span>
-        <span className={styles.switch}>
+    <span className={'switchWithLabel'}>
+        <span className={'label'}>{children}</span>
+        <span className={'switch'}>
             <Switch checked={checked} onChange={onChange} {...switchProps} />
         </span>
     </span>
@@ -97,7 +95,7 @@ SwitchWithLabel.propTypes = {
 };
 
 export const TogglesLinkList = ({ toggles }) => (
-    <List style={{ textAlign: 'left' }} className={styles.truncate}>
+    <List style={{ textAlign: 'left' }} className={'truncate'}>
         {toggles.length > 0 &&
             toggles.map(({ name, description = '-', icon = 'toggle' }) => (
                 <ListItem twoLine key={name}>
@@ -140,7 +138,7 @@ IconLink.propTypes = {
 };
 
 export const DropdownButton = ({ label, id }) => (
-    <Button id={id} className={styles.dropdownButton}>
+    <Button id={id} className={'dropdownButton'}>
         {label}
         <Icon name="arrow_drop_down" className="mdl-color-text--grey-600" />
     </Button>

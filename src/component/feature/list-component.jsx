@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Feature from './feature-list-item-component';
 import { hashHistory, Link } from 'react-router';
 import { Icon, FABButton, Textfield, Menu, MenuItem, Card, CardActions, List } from 'react-mdl';
-import { MenuItemWithIcon, DropdownButton, styles as commonStyles } from '../common';
+import { MenuItemWithIcon, DropdownButton} from '../common';
 import './feature.css';
+import '../common/common.css';
 
 export default class FeatureListComponent extends React.Component {
     static propTypes = {
@@ -71,7 +72,7 @@ export default class FeatureListComponent extends React.Component {
                         </FABButton>
                     </Link>
                 </div>
-                <Card shadow={0} className={commonStyles.fullwidth} style={{ overflow: 'visible' }}>
+                <Card shadow={0} className={'fullwidth'} style={{ overflow: 'visible' }}>
                     <CardActions>
                         <DropdownButton id="metric" label={`Last ${settings.showLastHour ? 'hour' : 'minute'}`} />
                         <Menu target="metric" onClick={() => this.toggleMetrics()} style={{ width: '168px' }}>
